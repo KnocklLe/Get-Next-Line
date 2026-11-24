@@ -6,13 +6,13 @@
 /*   By: edolemai <edolemai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 15:30:47 by edolemai          #+#    #+#             */
-/*   Updated: 2026/11/23 14:12:18 by edolemai         ###   ########.fr       */
+/*   Updated: 2026/11/24 08:44:02 by edolemai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# define BUFFER_SIZE 1000
+# define BUFFER_SIZE 42
 
 # include <fcntl.h>
 # include <stdlib.h>
@@ -20,4 +20,9 @@
 
 char	*get_next_line(int fd);
 void	ft_putchar(char c);
+size_t	ft_strlen(const char *str);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strchr(const char *s, int c);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+
 #endif
