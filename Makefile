@@ -1,7 +1,7 @@
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
-SOURCES = get_next_line.c get_next_line_utils.c
+CFLAGS = -Wall -Wextra -Werror -D BUFFER_SIZE=10
+SOURCES = get_next_line.c get_next_line_utils.c \
 OBJECTS = $(SOURCES:.c=.o)
 NAME = ex
 

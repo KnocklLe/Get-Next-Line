@@ -6,13 +6,12 @@
 /*   By: edolemai <edolemai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 15:30:47 by edolemai          #+#    #+#             */
-/*   Updated: 2026/11/24 09:40:42 by edolemai         ###   ########.fr       */
+/*   Updated: 2026/11/24 14:02:37 by edolemai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# define BUFFER_SIZE 42
 
 # include <fcntl.h>
 # include <stdlib.h>

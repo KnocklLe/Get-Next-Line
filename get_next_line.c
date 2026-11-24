@@ -6,7 +6,7 @@
 /*   By: edolemai <edolemai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 15:30:50 by edolemai          #+#    #+#             */
-/*   Updated: 2026/11/24 09:41:10 by edolemai         ###   ########.fr       */
+/*   Updated: 2026/11/24 15:17:10 by edolemai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,24 @@ static char	*ft_strjoin(char const *s1, char const *s2)
 	if (!finalstring)
 		return (NULL);
 	while (s1[i])
-		finalstring[i] = s1[i++];
+	{
+		finalstring[i] = s1[i];
+		i++;
+	}
 	while (s2[j])
-		finalstring[i + j] = s2[j++];
+	{
+		finalstring[i + j] = s2[j];
+		j++;
+	}
 	finalstring[i + j] = '\0';
 	return (finalstring);
+}
+
+char	*ft_free(char **stash)
+{
+	free(*stash);
+	*stash = NULL;
+	return (NULL);
 }
 
 static char	*ft_checkstash(ssize_t bytes_read, char **stash)
@@ -55,7 +68,7 @@ static char	*ft_checkstash(ssize_t bytes_read, char **stash)
 		}
 		new_stash = ft_substr(*stash, 0, ft_strlen(*stash));
 		if (!new_stash)
-			return (NULL);
+			return (ft_free(stash));
 		free(*stash);
 		*stash = NULL;
 		return (new_stash);
@@ -78,7 +91,12 @@ static char	*ft_checkline(char **stash, char *line)
 	if (!new_stash)
 	{
 		free(line);
-		return (NULL);
+		return (ft_free(stash));
+	}
+	if (!*new_stash)
+	{
+		free(new_stash);
+		new_stash = NULL;
 	}
 	free(*stash);
 	*stash = new_stash;
@@ -91,25 +109,20 @@ char	*get_next_line(int fd)
 	ssize_t		bytes_read;
 	char		buffer[BUFFER_SIZE + 1];
 	char		*new_stash;
-	char		*line;
 
-	line = NULL;
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	while (!stash || !ft_strchr(stash, '\n'))
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
 		if (bytes_read <= 0)
-		{
-			line = ft_checkstash(bytes_read, &stash);
-			return (line);
-		}
+			return (ft_checkstash(bytes_read, &stash));
 		buffer[bytes_read] = '\0';
 		new_stash = ft_strjoin(stash, buffer);
 		if (!new_stash)
-			return (NULL);
+			return (ft_free(&stash));
 		free(stash);
 		stash = new_stash;
 	}
-	return (line = ft_checkline(&stash, line));
+	return (ft_checkline(&stash, NULL));
 }
