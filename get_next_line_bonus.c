@@ -103,7 +103,7 @@ static char	*ft_checkline(char **stash, char *line)
 	return (line);
 }
 
-char	*get_next_line_bonus(int fd)
+char	*get_next_line(int fd)
 {
 	static char	*stash[OPEN_MAX];
 	ssize_t		bytes_read;

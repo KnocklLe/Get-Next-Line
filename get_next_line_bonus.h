@@ -18,7 +18,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-char	*get_next_line_bonus(int fd);
+char	*get_next_line(int fd);
 void	ft_putchar(char c);
 size_t	ft_strlen(const char *str);
 char	*ft_strchr(const char *s, int c);
