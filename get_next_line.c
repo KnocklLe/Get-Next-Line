@@ -6,11 +6,34 @@
 /*   By: edolemai <edolemai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 15:30:50 by edolemai          #+#    #+#             */
-/*   Updated: 2026/11/24 08:43:26 by edolemai         ###   ########.fr       */
+/*   Updated: 2026/11/24 09:41:10 by edolemai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+static char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*finalstring;
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	if (!s2)
+		return (NULL);
+	if (!s1)
+		s1 = "";
+	finalstring = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!finalstring)
+		return (NULL);
+	while (s1[i])
+		finalstring[i] = s1[i++];
+	while (s2[j])
+		finalstring[i + j] = s2[j++];
+	finalstring[i + j] = '\0';
+	return (finalstring);
+}
 
 static char	*ft_checkstash(ssize_t bytes_read, char **stash)
 {

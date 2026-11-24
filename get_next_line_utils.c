@@ -6,7 +6,7 @@
 /*   By: edolemai <edolemai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 15:30:52 by edolemai          #+#    #+#             */
-/*   Updated: 2026/11/24 08:43:45 by edolemai         ###   ########.fr       */
+/*   Updated: 2026/11/24 09:42:02 by edolemai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,44 +25,6 @@ size_t	ft_strlen(const char *str)
 	while (str[i])
 		i++;
 	return (i);
-}
-
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	size_t	total_size;
-	char	*finalstring;
-	size_t	i;
-	size_t	j;
-
-	j = 0;
-	i = 0;
-	if (s2 == NULL)
-		return (NULL);
-	if (s1)
-	{
-		total_size = ft_strlen(s1) + ft_strlen(s2);
-		finalstring = malloc(sizeof(char) * (total_size + 1));
-		if (finalstring == NULL)
-			return (NULL);
-		while (s1[i])
-		{
-			finalstring[i] = s1[i];
-			i++;
-		}
-	}
-	else
-	{
-		finalstring = malloc(sizeof(char) * (ft_strlen(s2) + 1));
-		if (!finalstring)
-			return (NULL);
-	}
-	while (s2[j])
-	{
-		finalstring[i + j] = s2[j];
-		j++;
-	}
-	finalstring[i + j] = '\0';
-	return (finalstring);
 }
 
 char	*ft_strchr(const char *s, int c)
@@ -105,9 +67,9 @@ static char	*ft_strdup(const char *s)
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *dest;
-	size_t i;
-	size_t s_len;
+	char	*dest;
+	size_t	i;
+	size_t	s_len;
 
 	if (!s)
 		return (NULL);
