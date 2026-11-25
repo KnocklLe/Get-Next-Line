@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edolemai <edolemai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edolemai <edolemai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 15:30:47 by edolemai          #+#    #+#             */
-/*   Updated: 2026/11/24 14:02:37 by edolemai         ###   ########.fr       */
+/*   Updated: 2026/11/25 14:35:36 by edolemai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+# define BUFFER_SIZE 1000
 
 # include <fcntl.h>
 # include <stdlib.h>

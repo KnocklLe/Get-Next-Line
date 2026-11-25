@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edolemai <edolemai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edolemai <edolemai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 13:56:43 by edolemai          #+#    #+#             */
-/*   Updated: 2026/11/24 14:07:16 by edolemai         ###   ########.fr       */
+/*   Updated: 2026/11/25 14:35:29 by edolemai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
 # define OPEN_MAX 1024
+# define BUFFER_SIZE 1000
 
 # include <fcntl.h>
 # include <stdlib.h>
