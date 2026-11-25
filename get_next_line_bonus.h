@@ -6,14 +6,16 @@
 /*   By: edolemai <edolemai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 13:56:43 by edolemai          #+#    #+#             */
-/*   Updated: 2026/11/25 14:35:29 by edolemai         ###   ########lyon.fr   */
+/*   Updated: 2026/11/25 14:52:04 by edolemai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
 # define OPEN_MAX 1024
-# define BUFFER_SIZE 1000
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1000
+# endif
 
 # include <fcntl.h>
 # include <stdlib.h>

@@ -6,13 +6,15 @@
 /*   By: edolemai <edolemai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 15:30:47 by edolemai          #+#    #+#             */
-/*   Updated: 2026/11/25 14:35:36 by edolemai         ###   ########lyon.fr   */
+/*   Updated: 2026/11/25 14:51:50 by edolemai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# define BUFFER_SIZE 1000
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1000
+# endif
 
 # include <fcntl.h>
 # include <stdlib.h>
